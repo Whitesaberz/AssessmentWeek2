@@ -30,13 +30,13 @@
 */
 
 //CODE HERE
-let pizza = {
+const pizza = {
   name: "Cowboy",
   price: 9.99,
   category: "meat",
   popularity: 8,
   rating: 8.5,
-  tags: ["pepperoni", "mushroom", "sausage"],
+  tags: ["pepperoni", "mushroom", "sausage", "olive"],
 };
 
 //////////////////PROBLEM 2////////////////////
@@ -48,8 +48,7 @@ let pizza = {
 */
 
 //CODE HERE
-let pizzaPop = pizza.popularity;
-console.log(pizzaPop);
+console.log(pizza.popularity);
 
 /*
     Second, log the second tag in your pizza's
@@ -59,8 +58,8 @@ console.log(pizzaPop);
 */
 
 //CODE HERE
-let pizzaDesc = pizza.tags[1];
-console.log(pizzaDesc);
+
+console.log(pizza.tags[1]);
 
 /*
     Third, destructure the price off of the
@@ -151,7 +150,7 @@ let ramen = [
 */
 
 //CODE HERE
-const filteredFood = ramen.filter((specificTag) => specificTag.tags === "pork");
+const filteredFood = ramen.filter((food) => food.tags.includes("pork"));
 console.log(filteredFood);
 
 //////////////////PROBLEM 5////////////////////
@@ -194,12 +193,22 @@ console.log(filteredFood);
 */
 
 //CODE HERE
-
+const filterByProperty = (property, number, type) => {
+  let foodFilter = ramen.filter((food) => {
+    if (type === "above") {
+      return food[property] >= number;
+    } else {
+      return food[property] <= number;
+    }
+  });
+  return foodFilter;
+};
 /*
     Invoke the `filterByProperty` function passing
-    in a value for each paramter.
+    in a value for each parameter.
 
     You'll have to console.log to see the filtered array
 */
 
 //CODE HERE
+console.log(filterByProperty("popularity", 3, "below"));

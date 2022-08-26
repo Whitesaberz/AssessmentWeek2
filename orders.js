@@ -55,7 +55,8 @@ customer: 575
 */
 //CODE HERE
 
-let firstTicket = new Ticket("pizza, bread, and soda", "7:03", 575);
+const firstTicket = new Ticket("pizza, bread, and soda", "7:03", 575);
+console.log(firstTicket);
 /*
 Call the `updateStatus` method on
 `firstTicket` passing in the string
@@ -63,4 +64,5 @@ Call the `updateStatus` method on
 */
 
 //CODE HERE
-updateStatus(firstTicket);
+
+firstTicket.updateStatus("cooking");

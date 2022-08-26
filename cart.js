@@ -34,10 +34,8 @@ const cart = [
 
 //CODE HERE
 
-const summedPrice = (arr) => arr.price.reduce((total, price) => total + price);
-summedPrice(cart);
-
-4
+const summedPrice = cart.reduce((total, current) => total + current.price, 0);
+console.log(summedPrice);
 //////////////////PROBLEM 2////////////////////
 /*  
     Write a function called `calcFinalPrice` that
@@ -54,6 +52,13 @@ summedPrice(cart);
 */
 
 //CODE HERE
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+  const totalBeforeCoupon = cartTotal * (1 + tax);
+  const finalPrice = totalBeforeCoupon - couponValue;
+
+  return finalPrice;
+};
+console.log(calcFinalPrice(summedPrice, 5, 0.06));
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -86,3 +91,11 @@ summedPrice(cart);
 */
 
 //CODE HERE
+
+const firstCustomer = {
+  firstName: "Woody",
+  lastName: "White",
+  address: "123 Fake St",
+  city: "Nunyabiz",
+  phone: 1234567891,
+};

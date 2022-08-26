@@ -48,7 +48,7 @@ console.log(greetUser("Woody"));
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206];
 
 //CODE HERE
-const weCanDeliver = (zipCode) => {
+const canWeDeliver = (zipCode) => {
   if (deliveryAreaZipCodes.includes(zipCode)) {
     console.log("We can deliver to you!");
   } else {
@@ -56,7 +56,7 @@ const weCanDeliver = (zipCode) => {
   }
 };
 
-weCanDeliver(85206);
+canWeDeliver(85206);
 
 /* 
     Problem 2 Continued
@@ -76,20 +76,15 @@ weCanDeliver(85206);
 */
 
 // CODE HERE
-const canWeDeliver = (zipCode) => {
+const canWeDeliverTwo = (zipCode) => {
   for (i = 0; i < deliveryAreaZipCodes.length; i++) {
     if (zipCode === deliveryAreaZipCodes[i]) {
-      return (available = true);
-    } else {
-      return (available = false);
+      return "We can deliver to you!";
     }
   }
-  if (available === true) {
-    console.log("We can deliver to you!");
-  } else available === false;
-  console.log("Sorry, we can't deliver to that address");
+  return "Sorry, we can't deliver to that address";
 };
-canWeDeliver(85205);
+console.log(canWeDeliverTwo(85275));
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -111,7 +106,7 @@ const deals = [
   },
   {
     title: "Free Kids Meal with 2 Regular Entrees",
-    desc: "   This deal lasts until the end of March! ",
+    desc: "     This deal lasts until the end of March! ",
   },
 ];
 
@@ -123,9 +118,9 @@ const deals = [
     to be itself, but use the `replace` method
     to replace the 15 with a 10.
 */
-
-// const newDeal = (arr) => arr.map(obj.title);
-// newDeal(deals);
+let coupon = deals[0].title;
+const newDeal = coupon.replace("15", "10");
+console.log(newDeal);
 
 /*
     The restaurant is going to continue its
@@ -140,4 +135,5 @@ const deals = [
     to be displaying wrong on the live site.
 */
 
-//CODE HERE
+const dealMonth = deals[1].desc.replace("March", "April").trim();
+console.log(dealMonth);
